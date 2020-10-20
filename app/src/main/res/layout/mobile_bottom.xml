@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_camera"
+            android:text="123"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <SeekBar
+            android:id="@+id/seekbar11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="30"
+
+            />
+        <SeekBar
+            android:id="@+id/seekbar22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="30"
+            />
+        <SeekBar
+            android:id="@+id/seekbar33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="30"
+         />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dip" >
+
+        <Button
+            android:id="@+id/goback"
+            android:layout_width="25dip"
+            android:layout_height="23dip"
+            android:background="@color/colorPrimary"
+            android:onClick="onBtnClick" />
+
+        <TextView
+            android:id="@+id/retrun_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goback"
+            android:paddingLeft="5dip"
+            android:paddingTop="2dip"
+            android:text="返回"
+            android:textColor="#FFFFFF"
+            android:textSize="8dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dip"
+        android:layout_marginLeft="18dip"
+        android:layout_toRightOf="@id/first" >
+
+        <Button
+            android:id="@+id/big"
+            android:layout_width="23dip"
+            android:layout_height="23dip"
+            android:background="@color/colorPrimary"
+            android:onClick="onBtnClick" />
+
+        <TextView
+            android:id="@+id/retrun_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/big"
+            android:paddingLeft="3dip"
+            android:paddingTop="2dip"
+            android:text="放大"
+            android:textColor="#FFFFFF"
+
+            android:textSize="8dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dip"
+        android:layout_marginLeft="18dip"
+        android:layout_toRightOf="@id/second" >
+
+        <Button
+            android:id="@+id/small"
+            android:layout_width="25dip"
+            android:layout_height="7dip"
+            android:background="@color/colorPrimary"
+            android:onClick="onBtnClick" />
+
+        <TextView
+            android:id="@+id/retrun_textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/small"
+            android:layout_marginTop="8dip"
+            android:paddingLeft="5dip"
+            android:paddingTop="2dip"
+            android:textColor="#FFFFFF"
+            android:text="缩小"
+            android:textSize="8dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dip"
+        android:layout_marginLeft="18dip"
+        android:layout_toRightOf="@id/third" >
+
+        <Button
+            android:id="@+id/left"
+            android:layout_width="25dip"
+            android:layout_height="23dip"
+            android:background="@color/colorPrimary"
+            android:onClick="onBtnClick" />
+
+        <TextView
+            android:id="@+id/retrun_textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/left"
+            android:paddingTop="2dip"
+            android:text="左旋转"
+            android:textColor="#FFFFFF"
+            android:textSize="8dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dip"
+        android:layout_marginLeft="18dip"
+        android:layout_toRightOf="@id/four" >
+
+        <Button
+            android:id="@+id/right"
+            android:layout_width="25dip"
+            android:layout_height="23dip"
+            android:background="@color/colorPrimary"
+            android:onClick="onBtnClick" />
+
+        <TextView
+            android:id="@+id/retrun_textview4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/right"
+            android:paddingTop="2dip"
+            android:text="右旋转"
+            android:textColor="#FFFFFF"
+
+            android:textSize="8dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dip"
+        android:layout_marginLeft="18dip"
+        android:layout_toRightOf="@id/five" >
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="21dip"
+            android:layout_height="24dip"
+            android:background="@color/colorPrimary"
+            android:onClick="onBtnClick" />
+
+        <TextView
+            android:id="@+id/retrun_textview5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reset"
+            android:paddingLeft="3dip"
+            android:paddingTop="2dip"
+            android:text="复位 "
+            android:textColor="#FFFFFF"
+
+            android:textSize="8dip" />
+    </RelativeLayout>
+
+</RelativeLayout>
