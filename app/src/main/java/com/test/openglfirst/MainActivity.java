@@ -41,6 +41,7 @@ import com.test.openglfirst.GLUtils.GLShape.GLTextureRectangle;
 import com.test.openglfirst.GLUtils.GLShape.GLTriangle;
 import com.test.openglfirst.GLUtils.GLShape.MatrixState;
 import com.test.openglfirst.GLUtils.GLUtil;
+import com.test.openglfirst.GLUtils.base.SaveHelper;
 import com.test.openglfirst.GLUtils.base.SurfaceViewHelper;
 import com.test.openglfirst.GLUtils.cameraUtils.KitkatCamera;
 
@@ -504,6 +505,9 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
 		}
 
 //		glTable.updateCamera(v1,v2,v3);
+//		glPointCloud.updateCamera(v1,v2,v3);
+
+		SaveHelper.updateABC(v1,v2,v3);
 		glLine.updateCamera(v1,v2,v3);
 	}
 

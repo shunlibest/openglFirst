@@ -9,9 +9,9 @@
 package com.test.openglfirst.GLUtils.GLShape;
 
 
-import android.opengl.Matrix;
 import android.util.Log;
 
+import com.google.ar.core.Camera;
 import com.google.ar.core.Pose;
 import com.test.openglfirst.GLUtils.GLUtil;
 import com.test.openglfirst.GLUtils.base.BaseSurfaceViewRender;
@@ -175,24 +175,37 @@ public class GLPointCloud extends BaseSurfaceViewRender {
 
 //        Matrix.scaleM(viewMatrix,0,viewMatrix,0,10f,10f,10f);
 
-        float[]  cameraMatrix= SaveHelper.cameraMatrix;
 
-        Matrix.setLookAtM(viewMatrix, 0, x +lookAtX,y,z-lookAtY,
-                0+lookAtX, 0, 0-lookAtY,
-                0, 1, 0);
+
+
+        float[]  cameraMatrix= SaveHelper.cameraMatrix;
+        Camera camera = SaveHelper.camera;
+        if (camera!=null){
+            camera.getProjectionMatrix(projectionMatrix, 0, 0.1f, 100.0f);
+
+            // Get camera matrix and draw.
+            camera.getViewMatrix(viewMatrix, 0);
+        }
 
         multiply(finalMatrix, projectionMatrix,viewMatrix);
 
-        if (cameraMatrix!=null) {
-            System.arraycopy(cameraMatrix, 0, viewMatrix, 0, cameraMatrix.length);
-            multiply(finalMatrix, finalMatrix, viewMatrix);
+//        Matrix.setLookAtM(viewMatrix, 0, x +lookAtX,y,z-lookAtY,
+//                0+lookAtX, 0, 0-lookAtY,
+//                0, 1, 0);
+//
+//        multiply(finalMatrix, finalMatrix,viewMatrix);
 
-            Matrix.setLookAtM(viewMatrix, 0, pose.tx()/5,pose.ty()/5,pose.tz()/5,
-                    0, 0, 0,
-                    0, 1, 0);
-
-            multiply(finalMatrix, projectionMatrix,viewMatrix);
-        }
+//
+//        if (cameraMatrix!=null) {
+//            System.arraycopy(cameraMatrix, 0, viewMatrix, 0, cameraMatrix.length);
+//            multiply(finalMatrix, finalMatrix, viewMatrix);
+//
+//            Matrix.setLookAtM(viewMatrix, 0, pose.tx()/5,pose.ty()/5,pose.tz()/5,
+//                    0, 0, 0,
+//                    0, 1, 0);
+//
+//            multiply(finalMatrix, projectionMatrix,viewMatrix);
+//        }
 //        }else {
 //
 //        }
@@ -200,9 +213,9 @@ public class GLPointCloud extends BaseSurfaceViewRender {
 
 
         setIdentityM(modelMatrix, 0);
-        scaleM(modelMatrix, 0, 0.05f, 0.05f, 0.05f);
+        scaleM(modelMatrix, 0, 0.5f, 0.5f, 0.5f);
 
-        translateM(modelMatrix, 0, 0f, 0f, 0f);
+        translateM(modelMatrix, 0, SaveHelper.A, SaveHelper.B, SaveHelper.A);
 
 //        setRotateEulerM(modelMatrix,0,(float) Math.toRadians(0),(float) Math.toRadians(90),
 //                (float) Math.toRadians(0));

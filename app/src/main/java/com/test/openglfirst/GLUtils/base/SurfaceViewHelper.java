@@ -133,7 +133,7 @@ public class SurfaceViewHelper {
 
 			Frame frame = session.update();
 
-//			Camera camera = frame.getCamera();
+			Camera camera = frame.getCamera();
 
 			// Get projection matrix.
 //			camera.getProjectionMatrix(projectionMatrix, 0, 0.1f, 100.0f);
@@ -154,7 +154,7 @@ public class SurfaceViewHelper {
 			SaveHelper.updateCameraMatrix(cameraMatrix);
 
 			SaveHelper.updateCameraPose(pose11);
-
+			SaveHelper.updateCamera(camera);
 //			pose11.toMatrix();
 
 //			MainActivity
